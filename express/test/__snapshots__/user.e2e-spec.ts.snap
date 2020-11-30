@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User E2E GET /api/users should return empty user list 1`] = `"[]"`;
+
+exports[`User E2E GET /api/users should return user list 1`] = `"[{\\"id\\":1,\\"name\\":\\"Test name\\"}]"`;
+
+exports[`User E2E GET /api/users/:userId should return user 1`] = `
+Object {
+  "id": 1,
+  "name": "Test name",
+}
+`;
+
+exports[`User E2E GET /api/users/:userId should throw not found exception 1`] = `"User not found"`;
+
+exports[`User E2E POST /api/users should return new user 1`] = `
+Object {
+  "id": 2,
+  "name": "Test name",
+}
+`;
+
+exports[`User E2E PUT /api/users/:userId should return updated user 1`] = `
+Object {
+  "id": 1,
+  "name": "Test update name",
+}
+`;
+
+exports[`User E2E PUT /api/users/:userId should throw not found exception 1`] = `"User not found"`;
