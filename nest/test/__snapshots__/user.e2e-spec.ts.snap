@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppController (e2e) GET /api/users should return empty user list 1`] = `"[]"`;
+
+exports[`AppController (e2e) GET /api/users should return user list 1`] = `"[{\\"id\\":1,\\"name\\":\\"Test name\\"}]"`;
+
+exports[`AppController (e2e) GET /api/users/:userId should return user 1`] = `
+Object {
+  "id": 1,
+  "name": "Test name",
+}
+`;
+
+exports[`AppController (e2e) GET /api/users/:userId should throw not found exception 1`] = `"{\\"statusCode\\":404,\\"message\\":\\"User not found\\",\\"error\\":\\"Not Found\\"}"`;
+
+exports[`AppController (e2e) POST /api/users should return new user 1`] = `
+Object {
+  "id": 1,
+  "name": "Test name",
+}
+`;
+
+exports[`AppController (e2e) POST /api/users should throw bad request exception 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    "name must be longer than or equal to 3 and shorter than or equal to 100 characters",
+    "name must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`AppController (e2e) PUT /api/users/:userId should return updated user 1`] = `
+Object {
+  "id": 1,
+  "name": "Test update name",
+}
+`;
+
+exports[`AppController (e2e) PUT /api/users/:userId should throw not found exception 1`] = `"{\\"statusCode\\":404,\\"message\\":\\"User not found\\",\\"error\\":\\"Not Found\\"}"`;

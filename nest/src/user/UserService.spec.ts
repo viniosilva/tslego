@@ -61,7 +61,7 @@ describe('UserService', () => {
       const user = userService.createUser({ name: 'test' });
       userService.removeUserById(user.id);
     });
-    
+
     it('should do nothing when user not exists', () => {
       userService.removeUserById(0);
     });

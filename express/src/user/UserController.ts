@@ -7,7 +7,7 @@ import { UserService } from './UserService';
  * @swagger
  * tags:
  *   - name: User
- *     description: Operations about user
+ *     description: Operations about users
  */
 export class UserController {
   readonly router = Router();
@@ -77,7 +77,7 @@ export class UserController {
    * /users:
    *   post:
    *     tags: ["User"]
-   *     description: Returns found user by id
+   *     description: Create user
    *     parameters:
    *     - name: "body"
    *       in: "body"
@@ -90,6 +90,8 @@ export class UserController {
    *         description: "Successful operation"
    *         schema:
    *           $ref: "#/definitions/User"
+   *       "400":
+   *         description: "Bad request"
    */
   private createUser(req: Request, res: Response): void {
     const user = this.userService.createUser(req.body);
@@ -101,7 +103,7 @@ export class UserController {
    * /users/{userId}:
    *   put:
    *     tags: ["User"]
-   *     description: Returns found user by id
+   *     description: Update user by id
    *     parameters:
    *     - name: "userId"
    *       in: "path"
@@ -140,7 +142,7 @@ export class UserController {
    * /users/{userId}:
    *   delete:
    *     tags: ["User"]
-   *     description: Remove found user by id
+   *     description: `Remove found user by id`
    *     parameters:
    *     - name: "userId"
    *       in: "path"
