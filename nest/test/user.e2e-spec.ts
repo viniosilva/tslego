@@ -99,6 +99,17 @@ describe('AppController (e2e)', () => {
         });
     });
 
+    it('should throw bad request exception', () => {
+      const userInput = { name: 123 };
+      return request(app.getHttpServer())
+        .put(`${path}/0`)
+        .send(userInput)
+        .expect(400)
+        .expect((res: Response) => {
+          expect(res.body).toMatchSnapshot();
+        });
+    });
+
     it('should throw not found exception', () => {
       const userInput = { name: 'Test update name' };
       return request(app.getHttpServer())

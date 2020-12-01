@@ -1,3 +1,4 @@
+import Joi from 'joi';
 import { User, UserInput } from './dto/User';
 import { NotFoundException } from './exception/NotFoundException';
 
@@ -39,5 +40,14 @@ export class UserService {
     });
 
     if (!isNaN(indexOf)) this.users.splice(indexOf, 1);
+  }
+
+  validateUserInput(userInput: UserInput): void {
+    const schema = Joi.object({
+      name: Joi.string().min(3).max(100).required(),
+    });
+    const { error } = schema.validate(userInput);
+    if (error)
+      throw new Error(error.details.map(({ message }) => message).join(', '));
   }
 }

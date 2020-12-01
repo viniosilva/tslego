@@ -20,10 +20,22 @@ Object {
 }
 `;
 
+exports[`User E2E POST /api/users should throw bad request exception 1`] = `
+Object {
+  "error": "\\"name\\" must be a string",
+}
+`;
+
 exports[`User E2E PUT /api/users/:userId should return updated user 1`] = `
 Object {
   "id": 1,
   "name": "Test update name",
+}
+`;
+
+exports[`User E2E PUT /api/users/:userId should throw bad request exception 1`] = `
+Object {
+  "error": "\\"name\\" must be a string",
 }
 `;
 

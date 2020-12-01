@@ -61,6 +61,17 @@ describe('User E2E', () => {
           expect(res.body).toMatchSnapshot();
         });
     });
+
+    it('should throw bad request exception', () => {
+      const userInput = { name: 123 };
+      return request(server.app)
+        .put(`${path}/0`)
+        .send(userInput)
+        .expect(400)
+        .expect((res: Response) => {
+          expect(res.body).toMatchSnapshot();
+        });
+    });
   });
 
   describe('PUT /api/users/:userId', () => {
@@ -70,6 +81,17 @@ describe('User E2E', () => {
         .put(`${path}/1`)
         .send(userInput)
         .expect(200)
+        .expect((res: Response) => {
+          expect(res.body).toMatchSnapshot();
+        });
+    });
+
+    it('should throw bad request exception', () => {
+      const userInput = { name: 123 };
+      return request(server.app)
+        .put(`${path}/0`)
+        .send(userInput)
+        .expect(400)
         .expect((res: Response) => {
           expect(res.body).toMatchSnapshot();
         });
@@ -89,9 +111,7 @@ describe('User E2E', () => {
 
   describe('DELETE /api/users/:userId', () => {
     it('should remove user', () => {
-      return request(server.app)
-        .delete(`${path}/1`)
-        .expect(204)
+      return request(server.app).delete(`${path}/1`).expect(204);
     });
   });
 });

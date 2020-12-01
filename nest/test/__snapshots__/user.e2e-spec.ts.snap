@@ -38,4 +38,15 @@ Object {
 }
 `;
 
+exports[`AppController (e2e) PUT /api/users/:userId should throw bad request exception 1`] = `
+Object {
+  "error": "Bad Request",
+  "message": Array [
+    "name must be longer than or equal to 3 and shorter than or equal to 100 characters",
+    "name must be a string",
+  ],
+  "statusCode": 400,
+}
+`;
+
 exports[`AppController (e2e) PUT /api/users/:userId should throw not found exception 1`] = `"{\\"statusCode\\":404,\\"message\\":\\"User not found\\",\\"error\\":\\"Not Found\\"}"`;

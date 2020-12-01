@@ -35,3 +35,5 @@ User {
 `;
 
 exports[`UserService updateUserById should throw not found exception 1`] = `"User not found"`;
+
+exports[`UserService validateUserInput should do throw validation exception 1`] = `"\\"name\\" length must be at least 3 characters long"`;

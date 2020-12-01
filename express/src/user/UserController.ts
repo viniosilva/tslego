@@ -1,4 +1,4 @@
-import { Request, Response, Router } from 'express';
+import { NextFunction, Request, Response, Router } from 'express';
 import { HttpStatus } from '../common/HttpStatus';
 import { NotFoundException } from './exception/NotFoundException';
 import { UserService } from './UserService';
@@ -15,8 +15,16 @@ export class UserController {
   constructor(private readonly userService: UserService) {
     this.router.get('/users', this.getUsers.bind(this));
     this.router.get('/users/:userId', this.getUserById.bind(this));
-    this.router.post('/users', this.createUser.bind(this));
-    this.router.put('/users/:userId', this.updateUserById.bind(this));
+    this.router.post(
+      '/users',
+      this.validateUserInput.bind(this),
+      this.createUser.bind(this),
+    );
+    this.router.put(
+      '/users/:userId',
+      this.validateUserInput.bind(this),
+      this.updateUserById.bind(this),
+    );
     this.router.delete('/users/:userId', this.removeUserById.bind(this));
   }
 
@@ -121,6 +129,8 @@ export class UserController {
    *         description: "Successful operation"
    *         schema:
    *           $ref: "#/definitions/User"
+   *       "400":
+   *         description: "Bad request"
    *       "404":
    *         description: "Not found"
    */
@@ -158,5 +168,14 @@ export class UserController {
     this.userService.removeUserById(Number(userId));
 
     res.sendStatus(HttpStatus.NO_CONTENT);
+  }
+
+  private validateUserInput(req: Request, res: Response, next: NextFunction) {
+    try {
+      this.userService.validateUserInput(req.body);
+      next();
+    } catch (err) {
+      res.status(HttpStatus.BAD_REQUEST).json({ error: err.message });
+    }
   }
 }

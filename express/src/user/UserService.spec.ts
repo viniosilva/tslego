@@ -61,9 +61,20 @@ describe('UserService', () => {
       const user = userService.createUser({ name: 'test' });
       userService.removeUserById(user.id);
     });
-    
+
     it('should do nothing when user not exists', () => {
       userService.removeUserById(0);
+    });
+  });
+
+  describe('validateUserInput', () => {
+    it('should do nothing when user is valid', () => {
+      userService.validateUserInput({ name: 'test' });
+    });
+
+    it('should do throw validation exception', () => {
+      const fn = () => userService.validateUserInput({ name: '1' });
+      expect(fn).toThrowErrorMatchingSnapshot();
     });
   });
 });

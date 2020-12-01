@@ -17,4 +17,16 @@ export class User {
   name: string;
 }
 
-export type UserInput = Omit<User, 'id'>;
+/**
+ * @swagger
+ * definitions:
+ *   UserInput:
+ *     type: "object"
+ *     properties:
+ *       name:
+ *         type: "string"
+ *         example: "Firstname Lastname"
+ */
+export class UserInput {
+  readonly name: string;
+}
