@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User E2E createUser should return new user 1`] = `
+Object {
+  "data": Object {
+    "id": 3,
+    "name": "test",
+  },
+}
+`;
+
+exports[`User E2E getUserById should return user 1`] = `
+Object {
+  "data": Object {
+    "id": 2,
+    "name": "test",
+  },
+}
+`;
+
+exports[`User E2E getUserById should throw not found exception 1`] = `[Error: 5 NOT_FOUND: User not found]`;
+
+exports[`User E2E getUsers should return empty user list 1`] = `Object {}`;
+
+exports[`User E2E getUsers should return user list 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "id": 1,
+      "name": "test",
+    },
+  ],
+}
+`;
+
+exports[`User E2E removeUserById should remove user 1`] = `
+Object {
+  "message": "OK",
+}
+`;
+
+exports[`User E2E updateUserById should return updated user 1`] = `
+Object {
+  "data": Object {
+    "id": 4,
+    "name": "update test",
+  },
+}
+`;
+
+exports[`User E2E updateUserById should throw not found exception 1`] = `[Error: 5 NOT_FOUND: User not found]`;

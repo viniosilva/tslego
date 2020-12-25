@@ -1,8 +1,8 @@
-# TSLego Express Hello
+# TSLego Hello
 
 ## Description
 
-Typescript default Express with CRUD user. :)
+Typescript default config with Hello World. :)
 Only copy and paste this folder and start coding!
 
 ## Installation
@@ -21,8 +21,6 @@ make dev
 make up
 ```
 
-- http://localhost:3000/api/docs
-
 ## Test
 
 ```bash
@@ -33,5 +31,6 @@ make test
 make test/cov
 
 # test e2e
+make up
 make test/e2e
 ```

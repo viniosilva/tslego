@@ -1,0 +1,69 @@
+{
+  "name": "tslego",
+  "version": "1.0.0",
+  "description": "Typescript labs",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "start": "node src/index.js",
+    "start:dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:updateSnapshots": "jest --updateSnapshot",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config test/jest-e2e.json",
+    "test:e2e:updateSnapshots": "jest --config test/jest-e2e.json --updateSnapshot",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniosilva/tslego.git"
+  },
+  "keywords": [],
+  "author": "Vinicius de Oliveira Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniosilva/tslego/issues"
+  },
+  "homepage": "https://github.com/viniosilva/tslego#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.13",
+    "@types/pino": "^6.3.4",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.5",
+    "dotenv": "^8.2.0",
+    "grpc": "^1.24.4",
+    "install": "^0.13.0",
+    "npm": "^6.14.9",
+    "pino": "^6.8.0"
+  }
+}
