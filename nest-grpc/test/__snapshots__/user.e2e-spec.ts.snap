@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppController (e2e) createUser should return new user 1`] = `
+Object {
+  "data": User {
+    "id": 1,
+    "name": "TEST",
+  },
+}
+`;
+
+exports[`AppController (e2e) createUser should throw bad request exception 1`] = `"Internal server error"`;
+
+exports[`AppController (e2e) getUserById should return user 1`] = `
+Object {
+  "data": User {
+    "id": 1,
+    "name": "TEST",
+  },
+}
+`;
+
+exports[`AppController (e2e) getUserById should throw not found exception 1`] = `"User not found"`;
+
+exports[`AppController (e2e) getUsers should return empty user list 1`] = `
+Object {
+  "data": Array [],
+}
+`;
+
+exports[`AppController (e2e) getUsers should return user list 1`] = `
+Object {
+  "data": Array [
+    User {
+      "id": 1,
+      "name": "TEST",
+    },
+  ],
+}
+`;
+
+exports[`AppController (e2e) removeUserById should remove user 1`] = `
+Object {
+  "message": "OK",
+}
+`;
+
+exports[`AppController (e2e) updateUserById should return updated user 1`] = `
+Object {
+  "data": User {
+    "id": 1,
+    "name": "UPDATE TEST",
+  },
+}
+`;
+
+exports[`AppController (e2e) updateUserById should throw bad request exception 1`] = `"Internal server error"`;
+
+exports[`AppController (e2e) updateUserById should throw not found exception 1`] = `"User not found"`;

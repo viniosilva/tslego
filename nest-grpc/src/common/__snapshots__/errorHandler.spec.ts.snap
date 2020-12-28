@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common errorHandler should throw internal server error 1`] = `"Internal server error"`;
+
+exports[`common errorHandler should throw not found 1`] = `"NOT_FOUND"`;

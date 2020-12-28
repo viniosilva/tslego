@@ -17,10 +17,10 @@ export class Server {
   }
 
   start() {
-    const uri = `${this.host}:${this.port}`;
-    this.server.bind(uri, ServerCredentials.createInsecure());
+    const url = `${this.host}:${this.port}`;
+    this.server.bind(url, ServerCredentials.createInsecure());
     this.server.start();
 
-    this.logger.info(`App listening on [${this.host}:${this.port}]`);
+    this.logger.info(`App listening on [${url}]`);
   }
 }

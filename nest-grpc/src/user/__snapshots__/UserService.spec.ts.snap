@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserService createUser should return new user 1`] = `
+User {
+  "id": 1,
+  "name": "Test",
+}
+`;
+
+exports[`UserService getUserById should return user 1`] = `
+User {
+  "id": 1,
+  "name": "test",
+}
+`;
+
+exports[`UserService getUserById should throw not found exception 1`] = `"User not found"`;
+
+exports[`UserService getUsers should return empty user list 1`] = `Array []`;
+
+exports[`UserService getUsers should return user list 1`] = `
+Array [
+  User {
+    "id": 1,
+    "name": "test",
+  },
+]
+`;
+
+exports[`UserService updateUserById should return updated user 1`] = `
+User {
+  "id": 1,
+  "name": "Update Test",
+}
+`;
+
+exports[`UserService updateUserById should throw not found exception 1`] = `"User not found"`;
+
+exports[`UserService validateUser should throw error 1`] = `
+"An instance of User has failed the validation:
+ - property name has failed the following constraints: length 
+"
+`;
+
+exports[`UserService validateUserRequest should throw error 1`] = `
+"An instance of UserRequest has failed the validation:
+ - property name has failed the following constraints: length 
+"
+`;
