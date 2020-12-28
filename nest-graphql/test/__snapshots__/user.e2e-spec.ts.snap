@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppController (e2e) createUser should return new user 1`] = `
+Object {
+  "data": Object {
+    "createUser": Object {
+      "id": 1,
+      "name": "TEST",
+    },
+  },
+}
+`;
+
+exports[`AppController (e2e) createUser should throw bad request exception 1`] = `
+Object {
+  "errors": Array [
+    Object {
+      "extensions": Object {
+        "code": "GRAPHQL_VALIDATION_FAILED",
+      },
+      "locations": Array [
+        Object {
+          "column": 38,
+          "line": 1,
+        },
+      ],
+      "message": "String cannot represent a non string value: 123",
+    },
+  ],
+}
+`;
+
+exports[`AppController (e2e) getUserById should return user 1`] = `
+Object {
+  "data": Object {
+    "getUserById": Object {
+      "id": 1,
+      "name": "TEST",
+    },
+  },
+}
+`;
+
+exports[`AppController (e2e) getUserById should throw not found exception 1`] = `
+Object {
+  "data": null,
+  "errors": Array [
+    Object {
+      "extensions": Object {
+        "code": "INTERNAL_SERVER_ERROR",
+      },
+      "locations": Array [
+        Object {
+          "column": 9,
+          "line": 1,
+        },
+      ],
+      "message": "User not found",
+      "path": Array [
+        "getUserById",
+      ],
+    },
+  ],
+}
+`;
+
+exports[`AppController (e2e) getUsers should return user list 1`] = `
+Object {
+  "data": Object {
+    "getUsers": Array [
+      Object {
+        "id": 1,
+        "name": "TEST",
+      },
+    ],
+  },
+}
+`;
+
+exports[`AppController (e2e) removeUserById should remove user 1`] = `
+Object {
+  "data": Object {
+    "removeUserById": true,
+  },
+}
+`;
+
+exports[`AppController (e2e) updateUserById should return updated user 1`] = `
+Object {
+  "data": Object {
+    "updateUserById": Object {
+      "id": 1,
+      "name": "TEST UPDATE",
+    },
+  },
+}
+`;
+
+exports[`AppController (e2e) updateUserById should throw bad request exception 1`] = `
+Object {
+  "errors": Array [
+    Object {
+      "extensions": Object {
+        "code": "GRAPHQL_VALIDATION_FAILED",
+      },
+      "locations": Array [
+        Object {
+          "column": 49,
+          "line": 1,
+        },
+      ],
+      "message": "String cannot represent a non string value: 123",
+    },
+  ],
+}
+`;
+
+exports[`AppController (e2e) updateUserById should throw not found exception 1`] = `
+Object {
+  "data": null,
+  "errors": Array [
+    Object {
+      "extensions": Object {
+        "code": "INTERNAL_SERVER_ERROR",
+      },
+      "locations": Array [
+        Object {
+          "column": 12,
+          "line": 1,
+        },
+      ],
+      "message": "User not found",
+      "path": Array [
+        "updateUserById",
+      ],
+    },
+  ],
+}
+`;

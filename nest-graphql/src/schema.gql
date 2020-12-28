@@ -1,0 +1,29 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  createUser(input: UserInput!): User!
+  removeUserById(id: Int!): Boolean!
+  updateUserById(id: Int!, input: UserInput!): User!
+}
+
+type Query {
+  getUserById(id: Int!): User!
+  getUsers: [User!]!
+}
+
+"""User object"""
+type User {
+  """The ID of the user"""
+  id: Int!
+
+  """The name of the user"""
+  name: String!
+}
+
+"""User input"""
+input UserInput {
+  """The name of the user"""
+  name: String!
+}
