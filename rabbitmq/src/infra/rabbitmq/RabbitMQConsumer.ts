@@ -13,4 +13,8 @@ export class RabbitMQConsumer extends RabbitMQ {
       .child({ queueName: this.queueName })
       .info('RabbitMQ: consuming messages');
   }
+
+  ack(msg: ConsumeMessage): void {
+    this.channel.ack(msg);
+  }
 }

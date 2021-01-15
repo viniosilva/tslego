@@ -20,6 +20,8 @@ async function bootstrap() {
     logger
       .child({ message: message.content.toString() })
       .info('RabbitMQ: message consumed');
+
+    rabbitMQ.ack(message);
   });
 }
 bootstrap();
